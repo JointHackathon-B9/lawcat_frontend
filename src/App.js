@@ -5,6 +5,7 @@ import LawcatHeader from './components/LawcatHeader/LawcatHeader.js';
 import Lawyerchat from './components/Lawyerchat/Lawyerchat.js';
 import Setting from './components/Setting/Setting.js';
 import CustomerService from './components/CustomerService/CustomerService.js';
+import VideoMeeting from "./components/VideoMeeting/VideoMeeting";
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     { link: '/Lawyerchat', title: '변호사 상담' },
     { link: '/Setting', title: '설정' },
     { link: '/CustomerService', title: '고객문의' },
+    { link: '/VideoMeeting', title: '화상 상담' },
   ];
 
   const MenuList = MenuBox.map((menu, idx) => (
@@ -40,6 +42,7 @@ const App = () => {
             path="/CustomerService/*"
             element={<CustomerService />}
           ></Route>
+          <Route path="/VideoMeeting/*" element={<VideoMeeting />}></Route>
           {/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */}
           <Route path="*" element={<Home />}></Route>
         </Routes>
