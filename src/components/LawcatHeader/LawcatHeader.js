@@ -35,6 +35,7 @@ const LawcatHeader = () => {
 
   const MenuBox = [
     { link: userId ? '/Lawchat' : '/LoginTest', title: '법률 상담' },
+    { link:'/VideoMeeting',  title: '화상 상담' },
     { link: userId ? '/CustomerService' :'/LoginTest', title: '고객문의' },
     { link: userId ? '/Setting'  : '/LoginTest', title: '설정' },
     { link: userId ? '/LoginTest': '/LoginTest', title: userId || '로그인'   },
