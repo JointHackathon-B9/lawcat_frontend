@@ -343,6 +343,34 @@ hr.cs_hr {
   margin-bottom: 0px;
 }
 
+div#video_container {
+  width: 100vw;
+  display: flex;
+  margin: 30px 10px;
+  justify-content: space-evenly;
+}
+
+div#video_btn_container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.video_btn {
+  color: #091d36;
+  font-weight: bold;
+  width: 100px;
+  height: 8vh;
+  background: antiquewhite;
+  margin: 0px 20px;
+  padding: auto;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid rgba(196, 196, 196, 0.1254901961);
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 30px;
+}
+
 body {
   background-color: #fff;
   margin: 0;
