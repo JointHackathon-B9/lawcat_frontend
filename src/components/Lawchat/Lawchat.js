@@ -38,8 +38,6 @@ const Lawchat = () => {
   let lawyerId;
 
   useEffect(() => {
-
-    axios.post(serverUrl+"bot", {userId: userId});
     const initChat = async () => {
       console.log(userId);
       console.log(token);
