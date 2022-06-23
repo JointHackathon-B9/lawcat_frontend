@@ -6,8 +6,8 @@ import CreateRoom from "./CreateRoom";
 const VideoMeeting = (props) => {
 
   var myStream;
-  const socket = io("http://localhost:4000")
-  // const socket = io("http://3.38.104.48:4000")
+  // const socket = io("http://localhost:4000")
+  const socket = io("http://3.38.104.48:4000")
 
   const ref = useRef();
   const otherRef = useRef();

@@ -8,15 +8,15 @@ const Login = () => {
 
   const handleLoginSubmit = (e) => {
 
-    e.preventDefault();
     axios.post('http://118.67.130.115/api/signIn', {
       userId: userId,
     }).then( e => {
       console.log(e.data);
       localStorage.setItem("token", e.data.token)
+      localStorage.setItem("userId", userId )
+      window.location.replace("/")
     });
 
-    localStorage.setItem("userId", userId )
   }
 
   const handleUserId = (e) => {
@@ -27,14 +27,19 @@ const Login = () => {
       <>
         <LoginContainer>
           <LoginBox>
+            <h1>로그인</h1>
             <LawCatImage src={LawCatImg} alt=""/>
             <IdInput placeholder="아이디" value={userId} onChange={handleUserId}/>
             <LoginSubmit  onClick={handleLoginSubmit}>로그인하기</LoginSubmit>
+            { localStorage.getItem("userId") ? null : <H1>로그인을 먼저 해주세요.</H1>}
           </LoginBox>
         </LoginContainer>
       </>
   );
 };
+const H1 = styled.h1`
+  color: red;
+`
 const LawCatImage = styled.img`
   width: 30%;
   height: 40%;
@@ -73,6 +78,12 @@ const IdInput = styled.input`
 const LoginSubmit = styled.button`
   margin-top: 3%;
   margin-bottom: 10%;
+  
+  width: 20%;
+  height: 10%;
+  
+  font-size: 1.5em;
+  font-weight: bold;
 `
 
 export default Login;

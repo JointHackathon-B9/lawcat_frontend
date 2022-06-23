@@ -5,8 +5,12 @@ import home from '../../images/home.png';
 import lawchat from '../../images/lawchat.png';
 import setting from '../../images/setting.png';
 import customerservice from '../../images/customerservice.png';
+import {useEffect, useRef, useState} from "react";
+import styled from 'styled-components'
 
 const LawcatHeader = () => {
+  const currentUrl = window.location.pathname;
+
   const returnImgName = (title) => {
     if (title === '홈') {
       return home;
@@ -19,11 +23,21 @@ const LawcatHeader = () => {
     }
   };
 
+  // const MenuBox = [
+  //   { link: '/Lawchat', title: '법률 상담' },
+  //   { link: '/CustomerService', title: '고객문의' },
+  //   { link: '/Setting', title: '설정' },
+  //   { link: '/LoginTest', title: localStorage.getItem("userId") || '로그인'   },
+  // ];
+
+// 로그인 안하면, 로그인 페이지로
+  const userId = localStorage.getItem("userId");
+
   const MenuBox = [
-    { link: '/Lawchat', title: '법률 상담' },
-    { link: '/CustomerService', title: '고객문의' },
-    { link: '/Setting', title: '설정' },
-    { link: '/LoginTest', title: '로그인'   },
+    { link: userId ? '/Lawchat' : '/LoginTest', title: '법률 상담' },
+    { link: userId ? '/CustomerService' :'/LoginTest', title: '고객문의' },
+    { link: userId ? '/Setting'  : '/LoginTest', title: '설정' },
+    { link: userId ? '/LoginTest': '/LoginTest', title: userId || '로그인'   },
   ];
 
   const MenuList = MenuBox.map((menu, idx) => (
@@ -45,6 +59,8 @@ const LawcatHeader = () => {
         /> */}
         {menu.title}
       </NavLink>
+
+
     </li>
   ));
 
@@ -65,4 +81,11 @@ const LawcatHeader = () => {
   );
 };
 
+const LoginErr = styled.h1`
+  position: absolute;
+  top: 10%;  
+  left: 47%;
+  
+  color: red;
+`
 export default LawcatHeader;
