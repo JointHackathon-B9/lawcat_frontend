@@ -32,6 +32,7 @@ const LawcatHeader = () => {
 
   const MenuBox = [
     { link: userId ? '/Lawchat' : '/Login', title: '법률 상담' },
+    { link:'/VideoMeeting',  title: '화상 상담' },
     { link: userId ? '/CustomerService' : '/Login', title: '고객문의' },
     { link: userId ? '/Login' : '/Login', title: userId || '로그인' },
   ];
