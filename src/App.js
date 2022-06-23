@@ -4,8 +4,9 @@ import Lawchat from './components/Lawchat/Lawchat.js';
 import LawcatHeader from './components/LawcatHeader/LawcatHeader.js';
 import Setting from './components/Setting/Setting.js';
 import CustomerService from './components/CustomerService/CustomerService.js';
-import Login from './components/Login/Login.js';
+import Login from './components/Login/LoginTest.js';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import VideoMeeting from "./components/VideoMeeting/VideoMeeting";
 
 const App = () => {
   return (
@@ -23,7 +24,8 @@ const App = () => {
                 path="/CustomerService/*"
                 element={<CustomerService />}
             ></Route>
-            <Route path="/Login/*" element={<Login />}></Route>
+            <Route path="/LoginTest/*" element={<Login />}></Route>
+            <Route path="/VideoMeeting/*" element={<VideoMeeting />}></Route>
             {/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */}
             <Route path="*" element={<Home />}></Route>
           </Routes>

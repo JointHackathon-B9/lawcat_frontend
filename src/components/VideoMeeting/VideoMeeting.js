@@ -123,22 +123,21 @@ const VideoMeeting = (props) => {
   }
 
   return (
-      <>
-        <div>
-          <Container>
-            <VV ref={ref} autoPlay></VV>
-            <VV ref={otherRef} autoPlay></VV>
-            <br/>
-          </Container>
-          <ButtonContainer>
-            <Button onClick={SoundOff}>소리off</Button>
-            <Button onClick={CameraOn}>카메라off</Button>
-          </ButtonContainer>
-        </div>
-      </>
+    <>
+      <div>
+        <Container>
+          <VV ref={ref} autoPlay></VV>
+          <VV ref={otherRef} autoPlay></VV>
+          <br/>
+        </Container>
+        <ButtonContainer>
+          <Button onClick={SoundOff}>소리off</Button>
+          <Button onClick={CameraOn}>카메라off</Button>
+        </ButtonContainer>
+      </div>
+    </>
   )
 }
-
 const VV=styled.video`
   width: 35vw;
   border-radius: 3vw ;

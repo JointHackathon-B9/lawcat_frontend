@@ -14,7 +14,9 @@ const Login = () => {
     }).then( e => {
       console.log(e.data);
       localStorage.setItem("token", e.data.token)
-    })
+    });
+
+    localStorage.setItem("userId", userId )
   }
 
   const handleUserId = (e) => {
@@ -26,7 +28,7 @@ const Login = () => {
         <LoginContainer>
           <LoginBox>
             <LawCatImage src={LawCatImg} alt=""/>
-            <IdInput placeholder="아이디"value={userId} onChange={handleUserId}/>
+            <IdInput placeholder="아이디" value={userId} onChange={handleUserId}/>
             <LoginSubmit  onClick={handleLoginSubmit}>로그인하기</LoginSubmit>
           </LoginBox>
         </LoginContainer>

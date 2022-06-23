@@ -23,7 +23,7 @@ const LawcatHeader = () => {
     { link: '/Lawchat', title: '법률 상담' },
     { link: '/CustomerService', title: '고객문의' },
     { link: '/Setting', title: '설정' },
-    { link: '/Login', title: '로그인' },
+    { link: '/LoginTest', title: '로그인'   },
   ];
 
   const MenuList = MenuBox.map((menu, idx) => (
